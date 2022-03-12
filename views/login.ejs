@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="generator" content="DSQKing">
+    <title>LOGIN CON NODE + JWT + LOGIN</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--SweetAlert2-->
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+    <!-- Custom styles for this template -->
+    <link href="css/signin.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body class="text-center">
+
+    <main class="form-signin text-center shadow-lg p-3 md-5">
+
+        <form id="formLogin" action="/login" method="post">
+            <img class="mb-4" src="img/logo.png" alt="" width="160" height="80">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="user" name="user" placeholder="User">
+                <label for="user">User</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="pass" name="pass" placeholder="Password">
+                <label for="pass">Password</label>
+            </div>
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+        </form>
+
+        <br>
+        <a href="/register" type="button" class="w-100 btn btn-bd-primary">Registrarse</a>
+        <p class="mt-5 mb-3 text-muted">&copy; 2021-2022</p>
+    </main>
+
+    <script src="js/sweetalert2.all.min.js"></script>
+    <%if (alert){%>
+        <script>
+            Swal.fire({
+                title: '<%= alertTitle %>',
+                text: '<%= alertMessage %>',
+                icon: '<%= alertIcon %>',
+                showConfirmButton: '<%= showConfirmButton %>'
+            }).then(() => {
+                window.location = '/<%= ruta%>'
+            })
+        </script>
+        <%}%>
+</body>
+
+</html>
